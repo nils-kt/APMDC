@@ -1,5 +1,5 @@
 # APMDC
-### Apple Music Discord (iTunes) Rich Presence
+### Apple Music (iTunes) Discord Rich Presence
 
 
 # Show your friends your music!
@@ -12,4 +12,5 @@ You need the Interop.iTunesLib.dll, you can download it [here](https://cdn.disco
 # Todo
 - [ ] Settings
 
+___
 Have fun!
