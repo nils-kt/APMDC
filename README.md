@@ -13,7 +13,7 @@ You need the Interop.iTunesLib.dll, you can download it [here](https://cdn.disco
 - [x] Settings
 
 # Credits
-<a target="_blank" href="https://icons8.com/icon/rQHPcf1HLSWR/upload">Upload</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/2908/help">Help</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 ___
 Any trademarks used belong to their respective owners. Apple Music (iTunes) Discord Rich Presence (APMDC) are not affiliated with or endorsed by Apple.

@@ -33,43 +33,58 @@ namespace APMDC
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            taskIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.taskIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.rightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.quit = new System.Windows.Forms.ToolStripMenuItem();
+            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itunesversion = new System.Windows.Forms.ToolStripMenuItem();
-            this.generateIssue = new System.Windows.Forms.ToolStripMenuItem();
             this.apmdcversion = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateIssue = new System.Windows.Forms.ToolStripMenuItem();
+            this.quit = new System.Windows.Forms.ToolStripMenuItem();
             this.save = new System.Windows.Forms.Button();
-            this.shareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autostart = new System.Windows.Forms.CheckBox();
+            this.geniusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.rightClick.SuspendLayout();
             this.SuspendLayout();
             // 
             // taskIcon
             // 
-            taskIcon.ContextMenuStrip = this.rightClick;
-            taskIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("taskIcon.Icon")));
-            taskIcon.Text = "Apple Music Discord Rich Presence";
-            taskIcon.Visible = true;
+            this.taskIcon.ContextMenuStrip = this.rightClick;
+            this.taskIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("taskIcon.Icon")));
+            this.taskIcon.Text = "Apple Music Discord Rich Presence";
+            this.taskIcon.Visible = true;
             // 
             // rightClick
             // 
             this.rightClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.shareToolStripMenuItem,
+            this.geniusToolStripMenuItem,
+            this.toolStripSeparator1,
             this.settingsToolStripMenuItem,
             this.supportToolStripMenuItem,
+            this.toolStripSeparator2,
             this.quit});
             this.rightClick.Name = "rightClick";
-            this.rightClick.Size = new System.Drawing.Size(181, 114);
+            this.rightClick.Size = new System.Drawing.Size(181, 148);
             // 
-            // quit
+            // shareToolStripMenuItem
             // 
-            this.quit.Image = ((System.Drawing.Image)(resources.GetObject("quit.Image")));
-            this.quit.Name = "quit";
-            this.quit.Size = new System.Drawing.Size(180, 22);
-            this.quit.Text = "Quit";
-            this.quit.Click += new System.EventHandler(this.quit_Click);
+            this.shareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("shareToolStripMenuItem.Image")));
+            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
+            this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shareToolStripMenuItem.Text = "Share";
+            this.shareToolStripMenuItem.Click += new System.EventHandler(this.shareToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // supportToolStripMenuItem
             // 
@@ -87,32 +102,32 @@ namespace APMDC
             this.itunesversion.Enabled = false;
             this.itunesversion.Image = ((System.Drawing.Image)(resources.GetObject("itunesversion.Image")));
             this.itunesversion.Name = "itunesversion";
-            this.itunesversion.Size = new System.Drawing.Size(180, 22);
+            this.itunesversion.Size = new System.Drawing.Size(150, 22);
             this.itunesversion.Text = "itunesversion";
-            // 
-            // generateIssue
-            // 
-            this.generateIssue.Image = ((System.Drawing.Image)(resources.GetObject("generateIssue.Image")));
-            this.generateIssue.Name = "generateIssue";
-            this.generateIssue.Size = new System.Drawing.Size(180, 22);
-            this.generateIssue.Text = "Generate Issue";
-            this.generateIssue.Click += new System.EventHandler(this.generateIssue_Click);
             // 
             // apmdcversion
             // 
             this.apmdcversion.Enabled = false;
             this.apmdcversion.Image = ((System.Drawing.Image)(resources.GetObject("apmdcversion.Image")));
             this.apmdcversion.Name = "apmdcversion";
-            this.apmdcversion.Size = new System.Drawing.Size(180, 22);
+            this.apmdcversion.Size = new System.Drawing.Size(150, 22);
             this.apmdcversion.Text = "apmdcversion";
             // 
-            // settingsToolStripMenuItem
+            // generateIssue
             // 
-            this.settingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("settingsToolStripMenuItem.Image")));
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            this.generateIssue.Image = ((System.Drawing.Image)(resources.GetObject("generateIssue.Image")));
+            this.generateIssue.Name = "generateIssue";
+            this.generateIssue.Size = new System.Drawing.Size(150, 22);
+            this.generateIssue.Text = "Generate Issue";
+            this.generateIssue.Click += new System.EventHandler(this.generateIssue_Click);
+            // 
+            // quit
+            // 
+            this.quit.Image = ((System.Drawing.Image)(resources.GetObject("quit.Image")));
+            this.quit.Name = "quit";
+            this.quit.Size = new System.Drawing.Size(180, 22);
+            this.quit.Text = "Quit";
+            this.quit.Click += new System.EventHandler(this.quit_Click);
             // 
             // save
             // 
@@ -124,19 +139,41 @@ namespace APMDC
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
-            // shareToolStripMenuItem
+            // autostart
             // 
-            this.shareToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("shareToolStripMenuItem.Image")));
-            this.shareToolStripMenuItem.Name = "shareToolStripMenuItem";
-            this.shareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.shareToolStripMenuItem.Text = "Share";
-            this.shareToolStripMenuItem.Click += new System.EventHandler(this.shareToolStripMenuItem_Click);
+            this.autostart.AutoSize = true;
+            this.autostart.Location = new System.Drawing.Point(12, 12);
+            this.autostart.Name = "autostart";
+            this.autostart.Size = new System.Drawing.Size(101, 17);
+            this.autostart.TabIndex = 2;
+            this.autostart.Text = "Add to autostart";
+            this.autostart.UseVisualStyleBackColor = true;
+            // 
+            // geniusToolStripMenuItem
+            // 
+            this.geniusToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("geniusToolStripMenuItem.Image")));
+            this.geniusToolStripMenuItem.Name = "geniusToolStripMenuItem";
+            this.geniusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.geniusToolStripMenuItem.Text = "Genius";
+            this.geniusToolStripMenuItem.Click += new System.EventHandler(this.geniusToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(254, 161);
+            this.ControlBox = false;
+            this.Controls.Add(this.autostart);
             this.Controls.Add(this.save);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -150,12 +187,11 @@ namespace APMDC
             this.Load += new System.EventHandler(this.Main_Load);
             this.rightClick.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        public static System.Windows.Forms.NotifyIcon taskIcon;
         private System.Windows.Forms.ContextMenuStrip rightClick;
         private System.Windows.Forms.ToolStripMenuItem quit;
         private System.Windows.Forms.ToolStripMenuItem supportToolStripMenuItem;
@@ -165,6 +201,11 @@ namespace APMDC
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.ToolStripMenuItem shareToolStripMenuItem;
+        private System.Windows.Forms.CheckBox autostart;
+        public System.Windows.Forms.NotifyIcon taskIcon;
+        private System.Windows.Forms.ToolStripMenuItem geniusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

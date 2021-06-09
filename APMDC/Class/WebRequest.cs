@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -36,14 +37,13 @@ namespace APMDC.Class
                     var share = JsonConvert.DeserializeObject<ShareRequest>(result);
 
                     if (share?.Share != null)
-                        foreach (var canShare in share?.Share)
-                            if (canShare.TrackTimeMillis / 1000 == currentTrack.Duration)
-                            {
-                                Process.Start("https://song.link/i/" + canShare.TrackId);
-                                return;
-                            }
+                        foreach (var canShare in (share?.Share).Where(canShare => canShare.TrackTimeMillis / 1000 == currentTrack.Duration))
+                        {
+                            Process.Start("https://song.link/i/" + canShare.TrackId);
+                            return;
+                        }
 
-                    Main.taskIcon.ShowBalloonTip(3000, "Error", "Could not find the Song!", ToolTipIcon.Error);
+                    Main.taskbarNotify.ShowBalloonTip(3000, "Error", "Could not find the Song!", ToolTipIcon.Error);
                 });
         }
     }
