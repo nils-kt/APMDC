@@ -1,4 +1,6 @@
-﻿using System;
+﻿#region Usings
+
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -6,12 +8,13 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using DiscordRPC;
 using iTunesLib;
 using Microsoft.Win32;
 using static iTunesLib.ITPlayerState;
 using WebRequest = APMDC.Class.WebRequest;
+
+#endregion
 
 namespace APMDC
 {
@@ -42,7 +45,7 @@ namespace APMDC
         {
             if (discordRpc == null || track == null) return;
 
-            var song = (IITTrack) track;
+            var song = (IITTrack)track;
 
             var timestamp = new Timestamps(DateTime.UtcNow.AddSeconds(-iTunes.PlayerPosition),
                 DateTime.UtcNow.AddSeconds(song.Duration - iTunes.PlayerPosition));
@@ -139,7 +142,8 @@ namespace APMDC
         private void geniusToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var song = iTunes?.CurrentTrack;
-            Process.Start($"https://genius.com/search?q={WebUtility.UrlEncode(song.Artist)}%20{WebUtility.UrlEncode(song.Name)}");
+            Process.Start(
+                $"https://genius.com/search?q={WebUtility.UrlEncode(song.Artist)}%20{WebUtility.UrlEncode(song.Name)}");
         }
     }
 }
